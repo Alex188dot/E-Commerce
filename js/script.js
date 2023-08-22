@@ -13,3 +13,26 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
     // Handle any errors here
     console.error(error);
   });
+let cartCounter = 0;
+let cartTotal = 0;
+
+const addToCartButtons = document.querySelectorAll(".addToCartButton");
+
+addToCartButtons.forEach((button) => {
+  button.addEventListener("click", addToCart);
+});
+function addToCart() {
+  cartCounter++;
+  cartTotal += parseFloat(this.dataset.price);
+
+  updateCartCounter();
+  updateCartTotal();
+}
+function updateCartCounter() {
+  const cartCounterElement = document.querySelector(".cartItemsCount");
+  cartCounterElement.textContent = cartCounter;
+}
+
+function updateCartTotal() {
+  console.log(cartTotal);
+}

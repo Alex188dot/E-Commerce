@@ -3,6 +3,10 @@ body {
   background-color: #f0f8ff;
 }
 
+a {
+  text-decoration: none;
+}
+
 header {
   background: linear-gradient(
     90deg,
