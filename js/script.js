@@ -27,6 +27,7 @@ function addToCart() {
 
   updateCartCounter();
   updateCartTotal();
+  localStorage.setItem("cartCounter", cartCounter);
 }
 function updateCartCounter() {
   const cartCounterElement = document.querySelector(".cartItemsCount");
@@ -36,3 +37,13 @@ function updateCartCounter() {
 function updateCartTotal() {
   console.log(cartTotal);
 }
+
+function checkCartCounter() {
+  const cartCounterElement = document.querySelector(".cartItemsCount");
+  const cartCounter = localStorage.getItem("cartCounter");
+  cartCounterElement.textContent = cartCounter;
+}
+
+window.onload = function () {
+  checkCartCounter();
+};
