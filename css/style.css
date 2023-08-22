@@ -1,3 +1,8 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f0f8ff;
+}
+
 header {
   background: linear-gradient(
     90deg,
@@ -9,4 +14,5 @@ header {
 h1,
 .lead {
   color: black !important;
+  font-family: "Lato", sans-serif;
 }
