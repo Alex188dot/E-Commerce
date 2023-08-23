@@ -17,6 +17,10 @@
       rel="stylesheet"
     />
     <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #f0f8ff;
+      }
       nav {
         background: linear-gradient(
           90deg,
@@ -43,10 +47,20 @@
         font-size: 1.5rem;
       }
 
-      .m-0.text-center.text-white a {
-        color: white !important;
-        margin-left: 4rem;
+      .footer-container {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .footer-container a {
         text-decoration: none;
+      }
+
+      @media (max-width: 767px) {
+        .footer-container {
+          flex-direction: column;
+          align-items: center;
+        }
       }
     </style>
   </head>
@@ -92,14 +106,24 @@
     </div>
     <!-- Footer-->
     <footer class="py-2 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">
-          Copyright &copy; Digital Dojo 2023
-          <a href="https://example.com">Terms & Conditions</a
-          ><a href="https://example.com">Cookies</a>
-          <a href="https://example.com">Privacy</a
-          ><a href="https://example.com">Legal</a>
-        </p>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 footer-container">
+            <a target="_blank" class="text-white" href="https://example.com"
+              >Terms & Conditions</a
+            ><a target="_blank" class="text-white" href="https://example.com"
+              >Cookies</a
+            >
+            <span class="m-0 text-white"
+              >Copyright &copy; Digital Dojo 2023</span
+            >
+            <a target="_blank" class="text-white" href="https://example.com"
+              >Privacy</a
+            ><a target="_blank" class="text-white" href="https://example.com"
+              >Legal</a
+            >
+          </div>
+        </div>
       </div>
     </footer>
 
@@ -151,7 +175,7 @@
         paymentButton.classList.add("btn", "btn-info", "ms-3", "mb-3");
         paymentButton.addEventListener("click", () => {
           window.alert(
-            "Hey! This is just a demo so there is no payment feature implemented, however feel free to go back and browse the website."
+            "Hey! This is just a demo so there is no payment feature implemented, but feel free to go back and browse the website."
           );
         });
         buttonContainer.appendChild(paymentButton);
@@ -176,12 +200,17 @@
       // Create HTML element for each cart item
       function createCartItemElement(product) {
         const itemElement = document.createElement("div");
-        itemElement.classList.add("cart-item");
         itemElement.classList.add(
+          "cart-item",
           "d-flex",
           "flex-row",
           "align-items-center",
-          "justify-content-between"
+          "justify-content-between",
+          "bg-white",
+          "p-3",
+          "rounded",
+          "border",
+          "border-1"
         );
 
         const imageElement = document.createElement("img");
