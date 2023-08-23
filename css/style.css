@@ -25,3 +25,8 @@ h1,
 nav {
   border-bottom: 1px solid #d2d2d2;
 }
+
+.m-0.text-center.text-white a {
+  color: white !important;
+  margin-left: 4rem;
+}

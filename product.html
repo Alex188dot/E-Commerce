@@ -17,6 +17,18 @@
         width: 80%;
         margin: auto;
       }
+      .details {
+        border: 2px solid transparent;
+        border-image: linear-gradient(
+          90deg,
+          rgba(220, 255, 17, 1) 3%,
+          rgba(0, 242, 107, 1) 100%
+        );
+        border-image-slice: 1;
+        padding: 20px;
+        margin-bottom: 5rem;
+      }
+
       .product {
         display: flex;
         align-items: center;
@@ -55,7 +67,6 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="index.html">Digital Dojo</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -71,8 +82,8 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="index.html"
-                >Back to Homepage</a
-              >
+                ><strong>Back to Homepage</strong>
+              </a>
             </li>
           </ul>
           <form class="d-flex">
@@ -127,6 +138,7 @@
         productElement.appendChild(imageElement);
 
         const detailsElement = document.createElement("div");
+        detailsElement.classList.add("details");
         detailsElement.innerHTML = `
           <h2>${product.name}</h2>
           <p><strong>Description:</strong> ${product.description}</p>

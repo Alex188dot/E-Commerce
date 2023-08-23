@@ -184,8 +184,8 @@ async function searchProduct(event) {
         if (matchingProducts.length > 0) {
           const productDetails = matchingProducts
             .map(
-              ({ name, description, brand, imageUrl, price }) =>
-                `Name: ${name}, Description: ${description}, Brand: ${brand}, ImageUrl: ${imageUrl}, Price: ${price}`
+              ({ name, _id, brand, price }) =>
+                `Name: ${name}, ID: ${_id},  Brand: ${brand}, Price: ${price}`
             )
             .join("\n");
           productDetailsElement.textContent = productDetails;
