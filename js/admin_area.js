@@ -1,3 +1,12 @@
+// Check if the referring URL is not admin_login.html
+if (
+  document.referrer !==
+  "https://alex188dot.github.io/E-Commerce/admin_login.html"
+) {
+  // Redirect the user to admin_login.html
+  window.location.href = "admin_login.html";
+}
+
 const apiUrl = "https://striveschool-api.herokuapp.com/api/product/";
 const authToken =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0N2JlMGRmZmI4YjAwMTQ0MTNiOTYiLCJpYXQiOjE2OTI2OTU1MjEsImV4cCI6MTY5MzkwNTEyMX0.73M6SmuYTdHsoW68z9q32Vhnb83McVN0sUMJY4HtaRQ";
