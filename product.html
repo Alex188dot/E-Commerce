@@ -64,13 +64,14 @@
         margin: 2rem auto;
       }
 
-      img {
+      .product img {
         margin-top: 3rem;
       }
       .footer-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
       }
+
       .footer-container a {
         text-decoration: none;
       }
@@ -78,7 +79,6 @@
         .footer-container {
           flex-direction: column;
           align-items: center;
-          justify-content: space-between;
         }
       }
     </style>
@@ -101,8 +101,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
             <li class="nav-item">
-              <a class="nav-link active" href="index.html"
-                ><strong>Back to Homepage</strong>
+              <a class="nav-link active" aria-current="page" href="index.html"
+                ><strong
+                  ><img src="assets/logo.png" alt="logo" width="35px" /> Back to
+                  Homepage</strong
+                >
               </a>
             </li>
           </ul>
