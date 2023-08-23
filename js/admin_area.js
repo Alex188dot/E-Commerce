@@ -154,3 +154,54 @@ async function updateProduct(event) {
     updateForm.reset();
   }
 }
+async function searchProduct(event) {
+  event.preventDefault();
+
+  // Get the input value
+  const productName = document
+    .getElementById("productName")
+    .value.toLowerCase();
+
+  // Perform the search operation
+  const productDetailsElement = document.getElementById("productDetails");
+  productDetailsElement.textContent = "Searching...";
+
+  try {
+    const response = await fetch(`${apiUrl}`, {
+      headers: {
+        Authorization: authToken,
+      },
+    });
+
+    if (response.ok) {
+      const products = await response.json();
+
+      if (products.length > 0) {
+        const matchingProducts = products.filter((product) =>
+          product.name.toLowerCase().includes(productName)
+        );
+
+        if (matchingProducts.length > 0) {
+          const productDetails = matchingProducts
+            .map(
+              ({ name, description, brand, imageUrl, price }) =>
+                `Name: ${name}, Description: ${description}, Brand: ${brand}, ImageUrl: ${imageUrl}, Price: ${price}`
+            )
+            .join("\n");
+          productDetailsElement.textContent = productDetails;
+        } else {
+          productDetailsElement.textContent = "No products found";
+        }
+      } else {
+        productDetailsElement.textContent = "No products found";
+      }
+    } else {
+      productDetailsElement.textContent =
+        "Error occurred while searching for the products";
+    }
+  } catch (error) {
+    console.error(error);
+    productDetailsElement.textContent =
+      "Error occurred while searching for the products";
+  }
+}
