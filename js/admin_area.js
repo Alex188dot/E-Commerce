@@ -4,7 +4,8 @@ if (
   "https://alex188dot.github.io/E-Commerce/admin_login.html"
 ) {
   // Redirect the user to admin_login.html
-  window.location.href = "admin_login.html";
+  window.location.href =
+    "https://alex188dot.github.io/E-Commerce/admin_login.html";
 }
 
 const apiUrl = "https://striveschool-api.herokuapp.com/api/product/";
