@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
               </div>
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                 <div class="text-center">
-                  <a class="btn btn-outline-dark mt-auto addToCartButton" data-id="${product._id}" data-price="${product.price}">Add to cart</a>
+                  <a class="btn btn-outline-dark mt-auto addToCartButton" data-id="${product._id}">Add to cart</a>
                 </div>
               </div>
             </div>
