@@ -26,7 +26,15 @@ nav {
   border-bottom: 1px solid #d2d2d2;
 }
 
-.m-0.text-center.text-white a {
-  color: white !important;
-  margin-left: 4rem;
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
