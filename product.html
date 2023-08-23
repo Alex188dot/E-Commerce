@@ -49,7 +49,7 @@
         gap: 20px;
       }
       .product img {
-        width: 30rem;
+        max-width: 100%;
       }
       nav {
         background: linear-gradient(
@@ -125,7 +125,7 @@
         </div>
       </div>
     </nav>
-    <div class="container product-container">
+    <div class="container-fluid product-container">
       <div class="row">
         <div class="col-12">
           <div id="productDetails"></div>
@@ -187,6 +187,8 @@
 
         const imageElement = document.createElement("img");
         imageElement.src = product.imageUrl;
+        imageElement.alt = product.name;
+        imageElement.classList.add("img-fluid");
         productElement.appendChild(imageElement);
 
         const detailsElement = document.createElement("div");
