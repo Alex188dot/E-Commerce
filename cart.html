@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Product Details</title>
+    <title>Cart</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon-32x32.png" />
     <!-- Bootstrap -->
@@ -70,7 +70,7 @@
   </head>
   <body>
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container px-4 px-lg-5">
         <button
           class="navbar-toggler"
@@ -105,73 +105,13 @@
       </div>
     </nav>
     <div class="container">
-      <div id="productDetails"></div>
+      <div id="cartDetails"></div>
     </div>
 
     <script>
-      function getProductDetails() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get("id");
-
-        fetch(
-          `https://striveschool-api.herokuapp.com/api/product/${productId}`,
-          {
-            headers: {
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0N2JlMGRmZmI4YjAwMTQ0MTNiOTYiLCJpYXQiOjE2OTI2OTU1MjEsImV4cCI6MTY5MzkwNTEyMX0.73M6SmuYTdHsoW68z9q32Vhnb83McVN0sUMJY4HtaRQ",
-            },
-          }
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            displayProductDetails(data);
-          })
-          .catch((error) => {
-            console.error("Error fetching product details:", error);
-          });
-      }
-
-      function displayProductDetails(product) {
-        const productDetailsContainer =
-          document.getElementById("productDetails");
-
-        const productElement = document.createElement("div");
-        productElement.classList.add("product");
-
-        const imageElement = document.createElement("img");
-        imageElement.src = product.imageUrl;
-        productElement.appendChild(imageElement);
-
-        const detailsElement = document.createElement("div");
-        detailsElement.classList.add("details");
-        detailsElement.innerHTML = `
-          <h2>${product.name}</h2>
-          <p><strong>Description:</strong> ${product.description}</p>
-          <p><strong>Brand:</strong> ${product.brand}</p>
-          <p><strong>Price:</strong> €${product.price}</p>
-          <div class="text-center">
-            <a class="btn btn-outline-dark mt-auto addToCartButton" data-price="${product.price}">Add to cart</a>
-          </div>
-        `;
-
-        productElement.appendChild(detailsElement);
-
-        productDetailsContainer.appendChild(productElement);
-
-        const addToCartButton = document.querySelector(".addToCartButton");
-        addToCartButton.addEventListener("click", function () {
-          let cartCounter = localStorage.getItem("cartCounter");
-          cartCounter = cartCounter ? parseInt(cartCounter) + 1 : 1;
-          localStorage.setItem("cartCounter", cartCounter);
-          updateCartCounter();
-        });
-      }
-
-      getProductDetails();
-
+      const cartCounter = localStorage.getItem("cartCounter");
       function updateCartCounter() {
         const cartCounterElement = document.querySelector(".cartItemsCount");
-        const cartCounter = localStorage.getItem("cartCounter");
         cartCounterElement.textContent = cartCounter;
       }
 

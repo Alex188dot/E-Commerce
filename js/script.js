@@ -43,7 +43,7 @@ window.addEventListener("load", () => {
               <img class="card-img-top" src="${product.imageUrl}" alt="${product.name}" style="margin-top: 3.5rem">
               <div class="card-body p-4">
                 <div class="text-center">
-                  <h5 class="fw-bolder"><a href="product.html?id=${product._id}">${product.name}</a></h5>
+                  <h5 class="fw-bolder"><a data-productId="${product._id}" href="product.html?id=${product._id}">${product.name}</a></h5>
                   €${product.price}
                 </div>
               </div>
@@ -69,10 +69,8 @@ window.addEventListener("load", () => {
   // Add to cart function
   function addToCart() {
     cartCounter++;
-    cartTotal += parseFloat(this.dataset.price);
 
     updateCartCounter();
-    updateCartTotal();
     localStorage.setItem("cartCounter", cartCounter);
   }
 
@@ -82,12 +80,11 @@ window.addEventListener("load", () => {
     cartCounterElement.textContent = cartCounter;
   }
 
-  // Update cart total
-  function updateCartTotal() {
-    console.log(cartTotal);
-  }
-
-  // Initialize cart counter and total
+  // Initialize cart counter
   updateCartCounter();
-  updateCartTotal();
+});
+
+const button = document.querySelector(".btn.btn-outline-dark");
+button.addEventListener("click", () => {
+  window.location.href = "cart.html";
 });
