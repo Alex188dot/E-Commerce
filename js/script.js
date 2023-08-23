@@ -68,7 +68,6 @@ window.addEventListener("load", () => {
   function addToCart() {
     const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     const productId = this.dataset.id;
-    console.log(productId);
 
     cartItems.push(productId);
 

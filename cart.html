@@ -39,6 +39,9 @@
       h1 {
         margin-top: 2rem;
       }
+      .total {
+        font-size: 1.5rem;
+      }
     </style>
   </head>
   <body>
@@ -110,7 +113,7 @@
 
         const totalElement = document.createElement("p");
         totalElement.textContent = `Total: €${totalPrice.toFixed(2)}`;
-        totalElement.classList.add("text-end", "fw-bold");
+        totalElement.classList.add("text-end", "fw-bold", "total");
         cartItemsContainer.appendChild(totalElement);
 
         const buttonContainer = document.createElement("div");
