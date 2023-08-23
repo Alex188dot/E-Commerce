@@ -17,31 +17,6 @@
       rel="stylesheet"
     />
     <style>
-      .container {
-        margin-top: 50px;
-        width: 80%;
-        margin: auto;
-      }
-      .details {
-        border: 2px solid transparent;
-        border-image: linear-gradient(
-          90deg,
-          rgba(220, 255, 17, 1) 3%,
-          rgba(0, 242, 107, 1) 100%
-        );
-        border-image-slice: 1;
-        padding: 20px;
-        margin-bottom: 5rem;
-      }
-
-      .product {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-      .product img {
-        width: 30rem;
-      }
       nav {
         background: linear-gradient(
           90deg,
@@ -49,22 +24,20 @@
           rgba(0, 242, 107, 1) 100%
         );
       }
-
-      #productDetails {
+      .container {
+        margin-top: 50px;
         width: 80%;
         margin: auto;
       }
-      .product {
+      .cart-item {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+        margin: 1rem 0;
       }
-      h2 {
-        text-align: center;
-        margin: 2rem auto;
-      }
-
-      img {
-        margin-top: 3rem;
+      h1 {
+        margin-top: 2rem;
       }
     </style>
   </head>
@@ -105,17 +78,143 @@
       </div>
     </nav>
     <div class="container">
-      <div id="cartDetails"></div>
+      <h1 class="text-center">Your Cart</h1>
+      <div id="cartItemsContainer"></div>
     </div>
 
     <script>
-      const cartCounter = localStorage.getItem("cartCounter");
       function updateCartCounter() {
+        const cartItems = JSON.parse(localStorage.getItem("cartItems"));
         const cartCounterElement = document.querySelector(".cartItemsCount");
-        cartCounterElement.textContent = cartCounter;
+        cartCounterElement.textContent = cartItems.length;
       }
 
+      // Initialize cart counter
       updateCartCounter();
+
+      const cartItemsContainer = document.getElementById("cartItemsContainer");
+
+      // Fetch product details for each item in the cartItems array
+      async function fetchCartItems() {
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+        let totalPrice = 0;
+
+        for (const productId of cartItems) {
+          const product = await fetchProduct(productId);
+          const itemElement = createCartItemElement(product);
+          cartItemsContainer.appendChild(itemElement);
+
+          totalPrice += product.price;
+        }
+
+        const totalElement = document.createElement("p");
+        totalElement.textContent = `Total: €${totalPrice.toFixed(2)}`;
+        totalElement.classList.add("text-end", "fw-bold");
+        cartItemsContainer.appendChild(totalElement);
+
+        const buttonContainer = document.createElement("div");
+        buttonContainer.classList.add("text-end");
+        cartItemsContainer.appendChild(buttonContainer);
+
+        const backButton = document.createElement("button");
+        backButton.textContent = "Back to shopping";
+        backButton.classList.add("btn", "btn-light");
+        backButton.addEventListener("click", () => {
+          window.location.href = "index.html";
+        });
+        buttonContainer.appendChild(backButton);
+
+        const paymentButton = document.createElement("button");
+        paymentButton.textContent = "Proceed to payment";
+        paymentButton.classList.add("btn", "btn-info", "ms-3");
+        paymentButton.addEventListener("click", () => {
+          window.alert(
+            "Hey! This is just a demo so there is no payment feature implemented, however feel free to go back and browse through the website."
+          );
+        });
+        buttonContainer.appendChild(paymentButton);
+      }
+
+      // Fetch product details from the API
+      async function fetchProduct(productId) {
+        const response = await fetch(
+          `https://striveschool-api.herokuapp.com/api/product/${productId}`,
+          {
+            headers: {
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0N2JlMGRmZmI4YjAwMTQ0MTNiOTYiLCJpYXQiOjE2OTI2OTU1MjEsImV4cCI6MTY5MzkwNTEyMX0.73M6SmuYTdHsoW68z9q32Vhnb83McVN0sUMJY4HtaRQ",
+            },
+          }
+        );
+
+        const product = await response.json();
+        return product;
+      }
+
+      // Create HTML element for each cart item
+      function createCartItemElement(product) {
+        const itemElement = document.createElement("div");
+        itemElement.classList.add("cart-item");
+        itemElement.classList.add(
+          "d-flex",
+          "flex-row",
+          "align-items-center",
+          "justify-content-between"
+        );
+
+        const imageElement = document.createElement("img");
+        imageElement.src = product.imageUrl;
+        imageElement.alt = product.name;
+        imageElement.style.width = "10rem";
+        itemElement.appendChild(imageElement);
+
+        const detailsContainer = document.createElement("div");
+        detailsContainer.classList.add("d-flex", "flex-column");
+        itemElement.appendChild(detailsContainer);
+
+        const nameElement = document.createElement("p");
+        nameElement.textContent = product.name;
+        nameElement.classList.add("fw-bold");
+        detailsContainer.appendChild(nameElement);
+
+        const priceElement = document.createElement("p");
+        priceElement.textContent = `€${product.price}`;
+        priceElement.classList.add("text-center");
+        detailsContainer.appendChild(priceElement);
+
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.classList.add("btn", "btn-danger");
+        removeButton.addEventListener("click", () =>
+          handleRemoveCartItem(product._id, itemElement)
+        );
+
+        const buttonContainer = document.createElement("div");
+        buttonContainer.appendChild(removeButton);
+
+        itemElement.appendChild(buttonContainer);
+
+        return itemElement;
+      }
+
+      function handleRemoveCartItem(productId, itemElement) {
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+        const updatedCartItems = cartItems.filter(
+          (itemId) => itemId !== productId
+        );
+        localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+
+        // Remove the item element from the DOM
+        itemElement.remove();
+
+        // Update the cart icon
+        updateCartCounter();
+      }
+
+      // Call the fetchCartItems function when the page loads
+      fetchCartItems();
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

@@ -13,12 +13,10 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
     // Handle any errors here
     console.error(error);
   });
-let cartCounter = 0;
-let cartTotal = 0;
 
 // Check if cartCounter exists in local storage
-if (localStorage.getItem("cartCounter")) {
-  cartCounter = parseInt(localStorage.getItem("cartCounter"));
+if (!localStorage.getItem("cartItems")) {
+  localStorage.setItem("cartItems", JSON.stringify([]));
 }
 
 // Wait for the window to load
@@ -43,13 +41,13 @@ window.addEventListener("load", () => {
               <img class="card-img-top" src="${product.imageUrl}" alt="${product.name}" style="margin-top: 3.5rem">
               <div class="card-body p-4">
                 <div class="text-center">
-                  <h5 class="fw-bolder"><a data-productId="${product._id}" href="product.html?id=${product._id}">${product.name}</a></h5>
+                  <h5 class="fw-bolder"><a  href="product.html?id=${product._id}">${product.name}</a></h5>
                   €${product.price}
                 </div>
               </div>
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                 <div class="text-center">
-                  <a class="btn btn-outline-dark mt-auto addToCartButton" data-price="${product.price}">Add to cart</a>
+                  <a class="btn btn-outline-dark mt-auto addToCartButton" data-id="${product._id}" data-price="${product.price}">Add to cart</a>
                 </div>
               </div>
             </div>
@@ -68,16 +66,23 @@ window.addEventListener("load", () => {
 
   // Add to cart function
   function addToCart() {
-    cartCounter++;
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const productId = this.dataset.id;
+    console.log(productId);
+
+    cartItems.push(productId);
+
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
     updateCartCounter();
-    localStorage.setItem("cartCounter", cartCounter);
+    console.log(cartItems);
   }
 
   // Update cart counter
   function updateCartCounter() {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
     const cartCounterElement = document.querySelector(".cartItemsCount");
-    cartCounterElement.textContent = cartCounter;
+    cartCounterElement.textContent = cartItems.length;
   }
 
   // Initialize cart counter
