@@ -17,7 +17,7 @@
       rel="stylesheet"
     />
     <style>
-      .container {
+      .container.product-container {
         margin-top: 50px;
         width: 80%;
         margin: auto;
@@ -37,6 +37,7 @@
       .product {
         display: flex;
         align-items: center;
+        flex-direction: column;
         gap: 20px;
       }
       .product img {
@@ -54,10 +55,7 @@
         width: 80%;
         margin: auto;
       }
-      .product {
-        display: flex;
-        flex-direction: column;
-      }
+
       h2 {
         text-align: center;
         margin: 2rem auto;
@@ -66,17 +64,26 @@
       img {
         margin-top: 3rem;
       }
-      .m-0.text-center.text-white a {
-        color: white !important;
-        margin-left: 4rem;
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+      }
+      .footer-container a {
         text-decoration: none;
+      }
+      @media (max-width: 767px) {
+        .footer-container {
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+        }
       }
     </style>
   </head>
   <body>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <div class="container px-4 px-lg-5">
+      <div class="container-fluid px-4 px-lg-5">
         <button
           class="navbar-toggler"
           type="button"
@@ -91,7 +98,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
+              <a class="nav-link active" href="index.html"
                 ><strong>Back to Homepage</strong>
               </a>
             </li>
@@ -107,19 +114,33 @@
         </div>
       </div>
     </nav>
-    <div class="container">
-      <div id="productDetails"></div>
+    <div class="container product-container">
+      <div class="row">
+        <div class="col-12">
+          <div id="productDetails"></div>
+        </div>
+      </div>
     </div>
     <!-- Footer-->
     <footer class="py-2 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">
-          Copyright &copy; Digital Dojo 2023
-          <a href="https://example.com">Terms & Conditions</a
-          ><a href="https://example.com">Cookies</a>
-          <a href="https://example.com">Privacy</a
-          ><a href="https://example.com">Legal</a>
-        </p>
+        <div class="row">
+          <div class="col-12 footer-container">
+            <a target="_blank" class="text-white" href="https://example.com"
+              >Terms & Conditions</a
+            ><a target="_blank" class="text-white" href="https://example.com"
+              >Cookies</a
+            >
+            <span class="m-0 text-white"
+              >Copyright &copy; Digital Dojo 2023</span
+            >
+            <a target="_blank" class="text-white" href="https://example.com"
+              >Privacy</a
+            ><a target="_blank" class="text-white" href="https://example.com"
+              >Legal</a
+            >
+          </div>
+        </div>
       </div>
     </footer>
 
