@@ -72,6 +72,13 @@
           align-items: center;
         }
       }
+      @media (max-width: 600px) {
+        .cart-item {
+          display: flex;
+          flex-direction: column !important;
+          align-items: flex-start;
+        }
+      }
     </style>
   </head>
   <body>
@@ -302,7 +309,7 @@
         let cartItems = localStorage.getItem("cartItems");
         let cartItemsContainer = document.querySelector("#cartItemsContainer");
         let emptyCartMessage = document.createElement("h3");
-        emptyCartMessage.classList.add("text-center", "mt-5");
+        emptyCartMessage.classList.add("text-center", "mt-5", "mb-5");
         emptyCartMessage.textContent =
           "Your cart is empty, go back to shopping!";
         let checkoutButton = document.querySelector(".btn-info");
