@@ -5,6 +5,9 @@ if (!localStorage.getItem("cartItems")) {
 
 // Wait for the window to load
 window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  loader.style.display = "block";
+
   // Fetch the products from the API
   fetch("https://striveschool-api.herokuapp.com/api/product/", {
     headers: {
@@ -42,6 +45,7 @@ window.addEventListener("load", () => {
           .addEventListener("click", addToCart);
 
         productsContainer.appendChild(productCard);
+        loader.style.display = "none";
       });
     })
     .catch((error) => {
