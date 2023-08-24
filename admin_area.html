@@ -20,6 +20,7 @@
       }
       h1 {
         margin-bottom: 2rem;
+        margin-top: 5rem;
       }
       button {
         margin-bottom: 0.5rem;
@@ -37,7 +38,8 @@
         text-decoration: none;
         color: black;
       }
-      form {
+
+      .col-12.col-lg-3 {
         margin-top: 2rem;
       }
     </style>
@@ -49,7 +51,7 @@
           <a href="index.html">Back to Homepage</a>
         </button>
       </div>
-      <h1 class="text-center mt-5">
+      <h1 class="text-center">
         Admin Area <img src="assets/logo.png" alt="logo" width="35px" />
       </h1>
       <div class="row mt-4">
@@ -57,7 +59,7 @@
         <div class="col-12 col-lg-3">
           <h2>Add Product</h2>
           <form id="addProductForm" onsubmit="addProduct(event)">
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="name" class="form-label">Name:</label>
               <input
                 type="text"
@@ -68,7 +70,7 @@
               />
             </div>
 
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="description" class="form-label">Description:</label>
               <input
                 type="text"
@@ -79,7 +81,7 @@
               />
             </div>
 
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="brand" class="form-label">Brand:</label>
               <input
                 type="text"
@@ -90,7 +92,7 @@
               />
             </div>
 
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="imageUrl" class="form-label">Image URL:</label>
               <input
                 type="text"
@@ -101,7 +103,7 @@
               />
             </div>
 
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="price" class="form-label">Price:</label>
               <input
                 type="number"
@@ -119,7 +121,7 @@
         <div class="col-12 col-lg-3">
           <h2>Update Product</h2>
           <form id="updateProductForm" onsubmit="updateProduct(event)">
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="updateProductId" class="form-label"
                 >Product ID:</label
               >
@@ -132,7 +134,7 @@
               />
             </div>
 
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="updateName" class="form-label">Name:</label>
               <input
                 type="text"
@@ -142,7 +144,7 @@
               />
             </div>
 
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="updateDescription" class="form-label"
                 >Description:</label
               >
@@ -154,7 +156,7 @@
               />
             </div>
 
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="updateBrand" class="form-label">Brand:</label>
               <input
                 type="text"
@@ -164,7 +166,7 @@
               />
             </div>
 
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="updateImageUrl" class="form-label">Image URL:</label>
               <input
                 type="text"
@@ -174,7 +176,7 @@
               />
             </div>
 
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="updatePrice" class="form-label">Price:</label>
               <input
                 type="number"
@@ -193,7 +195,7 @@
         <div class="col-12 col-lg-3">
           <h2>Search Product</h2>
           <form id="searchProductForm" onsubmit="searchProduct(event)">
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="productName" class="form-label">Product Name:</label>
               <input
                 type="text"
@@ -215,7 +217,7 @@
         <div class="col-12 col-lg-3">
           <h2>Delete Product</h2>
           <form id="deleteProductForm" onsubmit="deleteProduct(event)">
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="productId" class="form-label">Product ID:</label>
               <input
                 type="text"
