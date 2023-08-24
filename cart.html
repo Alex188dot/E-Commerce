@@ -79,6 +79,28 @@
           align-items: flex-start;
         }
       }
+      .loader {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        visibility: visible;
+        border: 5px solid rgba(0, 242, 107, 1);
+        border-top: 5px solid rgba(220, 255, 17, 1);
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body>
@@ -121,6 +143,7 @@
       </div>
     </nav>
     <div class="container">
+      <div id="loader" class="loader"></div>
       <h1 class="text-center">Your Cart</h1>
       <div id="cartItemsContainer"></div>
     </div>
@@ -161,6 +184,8 @@
 
       // Fetch product details for each item in the cartItems array
       async function fetchCartItems() {
+        const loader = document.getElementById("loader");
+        loader.style.display = "block";
         const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
         let totalPrice = 0;
@@ -172,6 +197,7 @@
 
           totalPrice += product.price;
         }
+        loader.style.display = "none";
 
         const totalElement = document.createElement("p");
         totalElement.textContent = `Total: €${totalPrice.toFixed(2)}`;
@@ -245,7 +271,7 @@
 
         const nameElement = document.createElement("p");
         nameElement.textContent = product.name;
-        nameElement.classList.add("fw-bold");
+        nameElement.classList.add("fw-bold", "fs-4", "text-center");
         detailsContainer.appendChild(nameElement);
 
         const priceElement = document.createElement("p");
