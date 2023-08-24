@@ -210,7 +210,13 @@
 
         const backButton = document.createElement("button");
         backButton.textContent = "Back to shopping";
-        backButton.classList.add("btn", "btn-light", "mb-3");
+        backButton.classList.add(
+          "btn",
+          "btn-light",
+          "mb-3",
+          "border",
+          "border-secondary"
+        );
         backButton.addEventListener("click", () => {
           window.location.href = "index.html";
         });
@@ -218,7 +224,15 @@
 
         const paymentButton = document.createElement("button");
         paymentButton.textContent = "Proceed to payment";
-        paymentButton.classList.add("btn", "btn-info", "ms-3", "mb-3");
+        paymentButton.classList.add(
+          "btn",
+          "btn-info",
+          "ms-3",
+          "mb-3",
+          "border",
+          "border-primary",
+          "border-opacity-50"
+        );
         paymentButton.addEventListener("click", () => {
           window.alert(
             "Hey! This is just a demo so there is no payment feature implemented, but feel free to go back and browse the website."
