@@ -38,6 +38,10 @@
         width: 80%;
         margin: auto;
       }
+      #cartItemsContainer {
+        min-height: 80vh;
+        border: 1px solid black;
+      }
       .cart-item {
         display: flex;
         flex-direction: row;
@@ -50,6 +54,9 @@
       }
       .total {
         font-size: 1.5rem;
+      }
+      footer {
+        margin-top: auto;
       }
 
       .footer-container {
@@ -255,6 +262,20 @@
         return itemElement;
       }
 
+      async function updateCartTotal() {
+        const totalElement = document.querySelector(".total");
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        let totalPrice = 0;
+
+        for (const productId of cartItems) {
+          const product = await fetchProduct(productId);
+          totalPrice += product.price;
+        }
+
+        const formattedPrice = `Total: €${totalPrice.toFixed(2)}`;
+        totalElement.textContent = formattedPrice;
+      }
+
       function handleRemoveCartItem(productId, itemElement) {
         const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
@@ -268,10 +289,36 @@
 
         // Update the cart icon
         updateCartCounter();
+
+        // Update cart total
+        updateCartTotal();
+
+        // Check if the cart is empty
+        checkCartItems();
       }
 
-      // Call the fetchCartItems function when the page loads
       fetchCartItems();
+
+      function checkCartItems() {
+        let cartItems = localStorage.getItem("cartItems");
+        let cartItemsContainer = document.querySelector("#cartItemsContainer");
+        let emptyCartMessage = document.createElement("h3");
+        emptyCartMessage.classList.add("text-center", "mt-5");
+        emptyCartMessage.textContent =
+          "Your cart is empty, go back to shopping!";
+        let checkoutButton = document.querySelector(".btn-info");
+
+        cartItems = JSON.parse(cartItems);
+
+        if (cartItems === null || cartItems.length === 0) {
+          let firstChild = cartItemsContainer.firstChild;
+          cartItemsContainer.insertBefore(emptyCartMessage, firstChild);
+
+          checkoutButton.style.display = "none";
+        }
+      }
+
+      checkCartItems();
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
