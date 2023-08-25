@@ -192,13 +192,13 @@ async function searchProduct(event) {
         );
 
         if (matchingProducts.length > 0) {
-          const productDetails = matchingProducts
-            .map(
-              ({ name, _id, brand, price }) =>
-                `Name: ${name}, ID: ${_id},  Brand: ${brand}, Price: ${price}`
-            )
-            .join("\n");
-          productDetailsElement.textContent = productDetails;
+          productDetailsElement.innerHTML = ""; // Clear previous content
+
+          matchingProducts.forEach(({ name, _id, brand, price }) => {
+            const productDetails = document.createElement("p");
+            productDetails.textContent = `Name: ${name}, ID: ${_id}, Brand: ${brand}, Price: ${price}`;
+            productDetailsElement.appendChild(productDetails);
+          });
         } else {
           productDetailsElement.textContent = "No products found";
         }
