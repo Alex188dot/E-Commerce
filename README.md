@@ -24,4 +24,6 @@ proceed to payment, they can click on the top right of the screen and they will 
 
 Here they will be able to see the total, remove items and proceed to payment. Please note this is only a demo and there is no actual payment feature implemented, if you click on the button you will get the following message:
 
+<p align="center">
 <img width="475" alt="Screenshot 2023-08-25 at 10 43 50" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/f1a742eb-71a6-41e4-b23a-03c3241fa632">
+</p>
