@@ -72,7 +72,7 @@ c) Example of searching a product. Let's say the admin needs to get the ID of an
   <img width="338" alt="Screenshot 2023-08-25 at 10 13 46" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/879e5e9b-2a80-4670-ae96-b224a573ec1e">
 </p>
 
-d) Example of deleting a product. Let's say the admin needs to delete a product because it is no longer available, they can do so just by inserting the ID in the relative field and click on delete product:
+d) Example of deleting a product. Let's say the admin needs to delete a product because it is no longer available, they can do so just by inserting the ID in the relative field and click on the Delete Product button:
 
 <p align="center">
   <img width="350" alt="Screenshot 2023-08-25 at 10 15 39" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/0ab87309-6439-4792-a75c-c31aa4db0849">
