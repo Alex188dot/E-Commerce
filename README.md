@@ -38,7 +38,7 @@ By clicking on the top right of the homepage, on Admin Login, the admin will be 
 
 <img width="2210" alt="Screenshot 2023-08-25 at 09 58 16" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/dcd6e272-bbce-47cd-a9d4-6c41315cf29d">
 
-Once succesfully logged in, the admin will be able to add, update, search and remove a product. Success or error messages will be displayed every time and action is performed. 
+Once succesfully logged in, the admin will be able to add, update, search and remove a product. Success or error messages will be displayed every time an action is performed. 
 
 <img width="2223" alt="Screenshot 2023-08-25 at 09 58 25" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/336e4e27-4cce-4b21-ba93-d522897daea7">
 
