@@ -6,7 +6,7 @@ Tech stack used for this project: HTML, CSS, Bootstrap, Javascript, RESTful APIs
 
 # Front-end
 
-Digital Dojo can be accessed by clicking on the following link: https://alex188dot.github.io/E-Commerce/
+Digital Dojo can be accessed by any device (fully responsive) by clicking on the following link: https://alex188dot.github.io/E-Commerce/ 
 
 The website will display all the available products, that are fetched directly from the database. 
 
@@ -18,7 +18,11 @@ By clicking on each product, the user will be able to see more details like a fu
 
 Furthermore the user will be able to add each product to a cart, through the Add to cart button, which can be found either in the homepage or in the product.html page. 
 By leveraging the use of local storage the cart progress is not lost but can be carried with ease through the different webpages, so that when the user decides to 
-proceed to payment, they can click on the top right of the screen and they will be redirected to the cart summary:
+proceed to payment, they can click on the top right of the screen and they will be redirected to the cart summary. If the cart is empty the user will find this message:
+
+<img width="2204" alt="Screenshot 2023-08-25 at 15 56 59" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/6e280431-9838-4c0b-9cb9-1cc633ca0df3">
+
+On the other hand, if there are items in the cart, a summary like the one below will be displayed:
 
 <img width="2230" alt="Screenshot 2023-08-25 at 09 57 54" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/51288a45-eadb-4ec0-a7fe-d596e6cad513">
 
