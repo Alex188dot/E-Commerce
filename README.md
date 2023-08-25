@@ -34,7 +34,7 @@ By clicking on the top right of the homepage, on Admin Login, the admin will be 
 
 <img width="2210" alt="Screenshot 2023-08-25 at 09 58 16" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/dcd6e272-bbce-47cd-a9d4-6c41315cf29d">
 
-Once succesfully logged in, the admin will be able to add, update, search and remove a product
+Once succesfully logged in, the admin will be able to add, update, search and remove a product. Success or error messages will be displayed every time and action is performed. 
 
 <img width="2223" alt="Screenshot 2023-08-25 at 09 58 25" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/336e4e27-4cce-4b21-ba93-d522897daea7">
 
@@ -44,7 +44,7 @@ a) Example of adding a product. The admin inserts all the info in the form (all 
   <img width="356" alt="Screenshot 2023-08-25 at 10 00 33" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/37e66c5d-c5c4-41c0-b32e-7d00d2a1508a">
 </p>
 
-The interface will show a success message under the button, or an error message in case something went wrong. By going back to the homepage we will be able to see that the product has been successfully added also on the front-end:
+By going back to the homepage we will be able to see that the product has been successfully added also on the front-end:
 
 <p align="center">
   <img width="386" alt="Screenshot 2023-08-25 at 10 00 47" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/e98daa44-772e-4ff9-b40a-8bd8de6943c7">
@@ -74,7 +74,7 @@ d) Example of deleting a product. Let's say the admin needs to delete a product 
   <img width="350" alt="Screenshot 2023-08-25 at 10 15 39" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/0ab87309-6439-4792-a75c-c31aa4db0849">
 </p>
 
-A message of success or error will be displayed below the button:
+A confirmation or error message will be displayed below the button, and the product will disappear from the front-end:
 <p align="center">
   <img width="326" alt="Screenshot 2023-08-25 at 10 16 08" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/2ebe13df-7461-4211-90e7-bb2bcdc9204b">
 </p>
