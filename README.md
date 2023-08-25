@@ -78,7 +78,7 @@ d) Example of deleting a product. Let's say the admin needs to delete a product 
   <img width="350" alt="Screenshot 2023-08-25 at 10 15 39" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/0ab87309-6439-4792-a75c-c31aa4db0849">
 </p>
 
-A confirmation or error message will be displayed below the button, and the product will disappear from the front-end:
+A confirmation message will be displayed and the product will disappear from the front-end:
 <p align="center">
   <img width="326" alt="Screenshot 2023-08-25 at 10 16 08" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/2ebe13df-7461-4211-90e7-bb2bcdc9204b">
 </p>
