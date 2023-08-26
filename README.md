@@ -10,7 +10,7 @@ Digital Dojo can be accessed by any device (fully responsive) by clicking on the
 
 The website will display all the available products, that are fetched directly from the database. 
 
-<img width="2223" alt="Screenshot 2023-08-25 at 09 56 09" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/39b8cfff-deac-499a-9a0b-2ebd9035f2a3">
+<img width="2216" alt="Homepage" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/58921952-ecd4-4a06-9eec-193d769e3828">
 
 By clicking on each product, the user will be able to see more details like a full description and a larger image (this is obtained with only one product.html page, by using query strings). 
 
