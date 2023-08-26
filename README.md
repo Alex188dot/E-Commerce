@@ -36,7 +36,7 @@ Here they will be able to see the total, remove items and proceed to payment. If
 
 By clicking on the top right of the homepage, on Admin Login, the admin will be able to sign into a private area where they will be able to communicate with the database. To access this part use: Admin01 (username) and 01 (password):
 
-<img width="2212" alt="Admin_login" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/9aea4bb0-f8ee-4baa-9e18-cf2cb980a968">
+<img width="1418" alt="Screenshot 2023-08-26 at 12 45 18" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/d5a9103a-e413-45f1-84ef-b89767917898">
 
 Once succesfully logged in, the admin will be able to add, update, search and remove a product. Success or error messages will be displayed every time an action is performed. 
 
