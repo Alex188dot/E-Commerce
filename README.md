@@ -36,11 +36,11 @@ Here they will be able to see the total, remove items and proceed to payment. If
 
 By clicking on the top right of the homepage, on Admin Login, the admin will be able to sign into a private area where they will be able to communicate with the database. To access this part use: Admin01 (username) and 01 (password):
 
-<img width="2210" alt="Screenshot 2023-08-25 at 09 58 16" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/dcd6e272-bbce-47cd-a9d4-6c41315cf29d">
+<img width="2212" alt="Admin_login" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/9aea4bb0-f8ee-4baa-9e18-cf2cb980a968">
 
 Once succesfully logged in, the admin will be able to add, update, search and remove a product. Success or error messages will be displayed every time an action is performed. 
 
-<img width="2223" alt="Screenshot 2023-08-25 at 09 58 25" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/336e4e27-4cce-4b21-ba93-d522897daea7">
+<img width="2204" alt="Admin_area" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/86a90422-53ba-4d89-a75e-19202b884784">
 
 a) Example of adding a product. The admin inserts all the info in the form (all are required) for an Xbox Controller:
 
@@ -51,7 +51,7 @@ a) Example of adding a product. The admin inserts all the info in the form (all 
 By going back to the homepage we will be able to see that the product has been successfully added also on the front-end:
 
 <p align="center">
-  <img width="386" alt="Screenshot 2023-08-25 at 10 00 47" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/e98daa44-772e-4ff9-b40a-8bd8de6943c7">
+  <img width="330" alt="Screenshot 2023-08-26 at 10 27 16" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/7df15639-c1be-4f9f-8b7b-a7b30dc51e67">
 </p>
 
 b) Example of updating a product. Let's say the admin wants to change the image for this product: by specifying only the ID (mandatory) and the new image the system will update the imageurl both on the server side and the client side. 
@@ -63,7 +63,7 @@ b) Example of updating a product. Let's say the admin wants to change the image 
 Hence the front-end will now show the new image:
 
 <p align="center">
-  <img width="303" alt="Screenshot 2023-08-25 at 10 15 00" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/06b15100-a887-4661-8734-85676b87b691">
+  <img width="328" alt="Screenshot 2023-08-26 at 10 28 42" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/da5fe09b-ab1d-403b-bc65-312fb7b4070f">
 </p>
 
 c) Example of searching a product. Let's say the admin needs to get the ID of an item quickly, for instance the Xbox, they can just type in the name of the product, and the system will return all the items in the db, matching that query:
