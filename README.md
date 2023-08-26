@@ -26,7 +26,7 @@ On the other hand, if there are items in the cart, a summary like the one below 
 
 <img width="2230" alt="Screenshot 2023-08-25 at 09 57 54" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/51288a45-eadb-4ec0-a7fe-d596e6cad513">
 
-Here they will be able to see the total, remove items and proceed to payment. Please note this is only a demo and there is no actual payment feature implemented, if you click on the button you will get the following message:
+Here they will be able to see the total, remove items and proceed to payment. If they click on the button the following message will appear:
 
 <p align="center">
   <img width="475" alt="Screenshot 2023-08-25 at 10 43 50" src="https://github.com/Alex188dot/E-Commerce/assets/117444853/f1a742eb-71a6-41e4-b23a-03c3241fa632">
