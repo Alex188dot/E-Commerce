@@ -38,7 +38,7 @@ window.addEventListener("load", () => {
               >
                 Sale
               </div>
-              <img class="card-img-top" src="${product.imageUrl}" alt="${product.name}" style="margin-top: 3.5rem">
+              <a href="product.html?id=${product._id}"><img class="card-img-top" src="${product.imageUrl}" alt="${product.name}" style="margin-top: 3.5rem"></a>
               <div class="card-body p-4">
                 <div class="text-center">
                   <h5 class="fw-bolder"><a  href="product.html?id=${product._id}">${product.name}</a></h5>
@@ -69,7 +69,7 @@ window.addEventListener("load", () => {
         ) {
           productCard.innerHTML = `
             <div class="card h-100">
-              <img class="card-img-top" src="${product.imageUrl}" alt="${product.name}" style="margin-top: 3.5rem">
+            <a href="product.html?id=${product._id}"><img class="card-img-top" src="${product.imageUrl}" alt="${product.name}" style="margin-top: 3.5rem"></a>
               <div class="card-body p-4">
                 <div class="text-center">
                   <h5 class="fw-bolder"><a  href="product.html?id=${product._id}">${product.name}</a></h5>
@@ -107,7 +107,7 @@ window.addEventListener("load", () => {
               >
                 Sale
               </div>
-              <img class="card-img-top" src="${product.imageUrl}" alt="${product.name}" style="margin-top: 3.5rem">
+              <a href="product.html?id=${product._id}"><img class="card-img-top" src="${product.imageUrl}" alt="${product.name}" style="margin-top: 3.5rem"></a>
               <div class="card-body p-4">
                 <div class="text-center">
                   <h5 class="fw-bolder"><a  href="product.html?id=${product._id}">${product.name}</a></h5>
@@ -139,10 +139,10 @@ window.addEventListener("load", () => {
               >
                 New
               </div>
-            <img class="card-img-top" src="${product.imageUrl}" alt="${product.name}" style="margin-top: 3.5rem">
+              <a href="product.html?id=${product._id}"><img class="card-img-top" src="${product.imageUrl}" alt="${product.name}" style="margin-top: 3.5rem"></a>
             <div class="card-body p-4">
               <div class="text-center">
-                <h5 class="fw-bolder"><a  href="product.html?id=${product._id}">${product.name}</a></h5>
+                <h5 class="fw-bolder"><a href="product.html?id=${product._id}">${product.name}</a></h5>
                 €${product.price}
               </div>
             </div>
