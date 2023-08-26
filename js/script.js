@@ -132,6 +132,13 @@ window.addEventListener("load", () => {
         } else {
           productCard.innerHTML = `
           <div class="card h-100">
+          <!-- New item badge-->
+              <div
+                class="badge bg-dark text-white position-absolute"
+                style="top: 0.5rem; right: 0.5rem"
+              >
+                New
+              </div>
             <img class="card-img-top" src="${product.imageUrl}" alt="${product.name}" style="margin-top: 3.5rem">
             <div class="card-body p-4">
               <div class="text-center">
