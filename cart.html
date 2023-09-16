@@ -257,6 +257,22 @@
           }
         );
 
+        if (!response.ok) {
+          const productsContainer =
+            document.getElementById("cartItemsContainer");
+          const errorMessage = document.createElement("div");
+          errorMessage.classList.add(
+            "alert",
+            "alert-danger",
+            "text-center",
+            "mt-5"
+          );
+          errorMessage.innerHTML = `<div>There was an error fetching the products, please try again later</div>`;
+          productsContainer.appendChild(errorMessage);
+          loader.style.display = "none";
+          console.error("Error fetching products:", error);
+        }
+
         const product = await response.json();
         return product;
       }
