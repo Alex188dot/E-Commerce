@@ -162,6 +162,12 @@ window.addEventListener("load", () => {
       });
     })
     .catch((error) => {
+      const productsContainer = document.querySelector(".py-5");
+      const errorMessage = document.createElement("div");
+      errorMessage.classList.add("alert", "alert-danger", "text-center");
+      errorMessage.innerHTML = `<div>There was an error fetching the products, please try again later</div>`;
+      productsContainer.appendChild(errorMessage);
+      loader.style.display = "none";
       console.error("Error fetching products:", error);
     });
 
